@@ -6,12 +6,10 @@ There are 2 main approaches of using Pagination in Visualforce world.
 
 Please read in detail about each of these here in <a href="https://developer.salesforce.com/docs/atlas.en-us.salesforce_visualforce_best_practices.meta/salesforce_visualforce_best_practices/vfbp_intro.htm">Visualforce Performance: Best Practices guide.</a>
 
-1. <a href="https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_classes_annotation_ReadOnly.htm"> @ReadOnly Annotation </a>
-As you might know normally, queries for a single Visualforce page request may not retrieve more than 50,000 rows. Using @ReadOnly annotation (read-only mode), this limit is relaxed to allow querying up to 1,000,000 rows. The drawback of this approach is, you can’t use data manipulation language (DML) operation on Visualforce page.
-<br/>
-(a) <a href="https://developer.salesforce.com/docs/atlas.en-us.pages.meta/pages/pages_controller_readonly_context_pagelevel.htm">Setting Read-Only Mode for an Entire Page</a>
-<br/>
-(b) <a href="https://developer.salesforce.com/docs/atlas.en-us.pages.meta/pages/pages_controller_readonly_context_methodlevel.htm"> Setting Read-Only Mode for Controller Methods</a>
+1. <a href="https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_classes_annotation_ReadOnly.htm">@ReadOnly Annotation</a><br/>
+As you might know normally, queries for a single Visualforce page request may not retrieve more than 50,000 rows. Using @ReadOnly annotation (read-only mode), this limit is relaxed to allow querying up to 1,000,000 rows. The drawback of this approach is, you can’t use data manipulation language (DML) operation on Visualforce page.<br/>
+(a) <a href="https://developer.salesforce.com/docs/atlas.en-us.pages.meta/pages/pages_controller_readonly_context_pagelevel.htm">Setting Read-Only Mode for an Entire Page</a><br/>
+(b) <a href="https://developer.salesforce.com/docs/atlas.en-us.pages.meta/pages/pages_controller_readonly_context_methodlevel.htm">Setting Read-Only Mode for Controller Methods</a>
 
 
 Here you will find the most common and standard built-in pagination approach<a href="https://developer.salesforce.com/docs/atlas.en-us.pages.meta/pages/apex_pages_standardsetcontroller.htm"> "StandardSetController" </a>

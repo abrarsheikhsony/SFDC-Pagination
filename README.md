@@ -4,8 +4,8 @@ There are 2 main approaches of using Pagination in Visualforce world.
 1. StandardSetController Built-In Pagination
 2. SOQL OFFSET Pagination
 
-Please read in detail about each of these here in Visualforce Performance: Best Practices guide.
-https://developer.salesforce.com/docs/atlas.en-us.salesforce_visualforce_best_practices.meta/salesforce_visualforce_best_practices/vfbp_intro.htm
+Please read in detail about each of these here in <a href="https://developer.salesforce.com/docs/atlas.en-us.salesforce_visualforce_best_practices.meta/salesforce_visualforce_best_practices/vfbp_intro.htm">Visualforce Performance: Best Practices guide.</a>
+
 
 Here you will find the most common and standard built-in pagination approach "StandardSetController".
 

@@ -6,7 +6,7 @@ There are 2 main approaches of using Pagination in Visualforce world.
 
 Please read in detail about each of these here in <a href="https://developer.salesforce.com/docs/atlas.en-us.salesforce_visualforce_best_practices.meta/salesforce_visualforce_best_practices/vfbp_intro.htm">Visualforce Performance: Best Practices guide.</a>
 
-Here you will find the most common and standard built-in pagination approach <a href="https://developer.salesforce.com/docs/atlas.en-us.pages.meta/pages/apex_pages_standardsetcontroller.htm">"StandardSetController">/a>
+Here you will find the most common and standard built-in pagination approach<a href="https://developer.salesforce.com/docs/atlas.en-us.pages.meta/pages/apex_pages_standardsetcontroller.htm"> "StandardSetController" </a>
 
 A controller class of a custom object "SalesOrder__c" and a Visualforce page "SalesOrderPagination".
 (1) This page shows "SalesOrder__c" records associated to an Account record using a Field Set fields and Dynamic query.

@@ -8,13 +8,13 @@ Please read in detail about each of these here in <a href="https://developer.sal
 
 Here you will find the most common and standard built-in pagination approach<a href="https://developer.salesforce.com/docs/atlas.en-us.pages.meta/pages/apex_pages_standardsetcontroller.htm"> "StandardSetController" </a>
 
-#### ApexPages.StandardSetController features
+### ApexPages.StandardSetController features
 1. Uses "StandardSetController" built-in pagination functionality in list controllers to prevent list views from displaying unbounded data.
 2. Unbounded data might cause longer load times, hit governor limits, and become unusable as the data set grows.
 3. By default, a list controller returns 20 records on the page, but developers often configure list views to display up to 100 records at a time.
 4. To control the number of records each page displays, uses a "setPageSize" property of ApexPages.StandardSetController.
 
-#### Example Considerations:
+### Example Considerations
 1. Here in this example we have Account (a standard object) and SalesOrder__c (a custom object).
 2. There is a Lookup relationship between Account and SalesOrder__c. An Account can have one "or many SalesOrder__c records.
 3. There is a custom button "Manage Sales Orders" on Account detail page

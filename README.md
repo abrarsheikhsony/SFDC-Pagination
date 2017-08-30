@@ -20,11 +20,13 @@ Here you will find the most common and standard built-in pagination approach<a h
 3. There is a custom button "Manage Sales Orders" on Account detail page
 <img src="supportedimages/Image1.png" />
 4. A controller class "SalesOrderController" of a custom object "SalesOrder__c" and a Visualforce page "SalesOrderPagination".
+<br/>
 (a) This page shows "SalesOrder__c" records associated to an Account record using a Field Set fields and Dynamic query.
 <img src="supportedimages/Image2.png" />
 (b) The page will have a functionality to select one "or" more "SalesOrder__c" records to perform Update/Delete operation.
 <img src="supportedimages/Image3.png" />
 (c) In order to achieve above functionality the page uses a wrapper class "SalesOrderWrapper".
+<br/>
 (d) The page has Pagination functionality with buttons "First", "Previous", "Next", "Last".
 <img src="supportedimages/Image4.png" />
 (e) A page show maximum 25 records at a time. You can change this setting in "PaginationUtility" class by using a custom setting etc.

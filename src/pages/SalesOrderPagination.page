@@ -1,0 +1,65 @@
+<apex:page standardController="Account" extensions="SalesOrderController" sidebar="false">
+
+	<apex:form id="salesOrderForm">
+		<apex:sectionHeader title="{!Account.Type}" subtitle="{!Account.Name}"/>
+
+		<apex:pagemessages ></apex:pagemessages>
+
+		<apex:pageBlock title="Sales Orders" mode="edit" id="salesOrderPageBlock"> 
+
+            <center>
+				<apex:actionStatus id="loadStatus">      
+					<apex:facet name="start">
+						<apex:image value="/img/loading.gif" title="Processing..."/>
+					</apex:facet>
+					<apex:facet name="stop">
+						<apex:commandButton value="Update Sales Orders" action="{!updateSalesOrders}" rendered="{!IF(lstSalesOrderWrapper != null && lstSalesOrderWrapper.size>0, True, False)}" status="loadStatus" reRender="salesOrderPageBlock"/>
+					</apex:facet>
+				</apex:actionStatus>
+                <apex:commandButton value="Cancel" action="{!cancel}"/>
+            </center>
+
+            <br/>
+
+			<!-- Show Buttons for Pagination -->
+			<center>
+				<apex:outputPanel id="paginationButtonsPanel">
+					<apex:panelGrid columns="5" rendered="{!IF(lstSalesOrderWrapper != null && lstSalesOrderWrapper.size>0, True, False)}">
+						<apex:commandButton action="{!first}" value="First" disabled="{!IF(pageNumber = 1, True, False)}"/> 
+						<apex:commandButton action="{!previous}" value="Previous" disabled="{!NOT(hasPrevious)}"/>
+						<apex:outputText value="Page {!pageNumber} of {!TotalPages}" rendered="{!TotalPages > 0}"></apex:outputText>
+						<apex:commandButton action="{!next}" value="Next" disabled="{!NOT(hasNext)}"/>
+						<apex:commandButton action="{!last}" value="Last" disabled="{!IF(pageNumber = TotalPages, True, False)}"/>
+					</apex:panelGrid>
+				</apex:outputPanel>
+			</center>
+
+			<br/>
+
+			<!-- This Div is helpful for Horizontal and Vertical Scroll bars -->
+			<div style="height:700px; overflow-x:scroll; overflow-y:scroll;">
+
+				<apex:outputText value="No records to display" rendered="{!lstSalesOrderWrapper.size = 0}"></apex:outputText>
+
+				<!-- Show SalesOrders which meets the defined the crtieria -->
+				<apex:pageBlockTable value="{!SalesOrders}" var="salesOrderWrapper" rendered="{!IF(lstSalesOrderWrapper != null && lstSalesOrderWrapper.size>0, True, False)}">
+
+					<apex:column headerValue="Select">
+						<apex:inputCheckbox value="{!salesOrderWrapper.isSelected}"/>
+					</apex:column>
+
+					<!-- Show SalesOrders using a Field Set "SalesOrderPaginationFieldSet" -->
+					<apex:repeat value="{!$ObjectType.SalesOrder__c.FieldSets.SalesOrderPaginationFieldSet}" var="fieldAPIName">
+						<apex:column headerValue="{!fieldAPIName.Label}">    
+							<apex:outputField value="{!salesOrderWrapper.salesOrderRecord[fieldAPIName]}"/>
+						</apex:column>                                    
+					</apex:repeat>
+
+				</apex:pageBlockTable>
+			</div>
+
+		</apex:pageBlock>
+
+	</apex:form>
+
+</apex:page>
